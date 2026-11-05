@@ -47,8 +47,28 @@ JoinEasy is a role-based school management web application developed using React
 5. Open the local URL displayed in the terminal.
 
 ## Data Storage
+## Demo Login Credentials
 
-The application uses browser Local Storage to persist user, assignment and attendance information.
+The following user IDs are available for testing the application.
+
+### Student Accounts
+
+| Role | User ID |
+|---|---|
+| Student 1 | `STU01` |
+| Student 2 | `STU02` |
+| Student 3 | `STU03` |
+| Student 4 | `STU05` |
+| Student 5 | `STU05` |
+
+### Teacher Accounts
+
+| Role | User ID |
+|---|---|
+| Teacher 1 | `TECH01` |
+| Teacher 2 | `TECH02` |
+
+**Note:** These are demo user IDs stored in the local database. They are provided for testing purposes.
 
 ## Future Enhancements
 
