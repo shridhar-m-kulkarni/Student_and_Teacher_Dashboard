@@ -1,16 +1,54 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from "../assets/JoinEasy_School_Logo.png"
-
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
 
-  
+  const navigate = useNavigate();
 
   const [role, setRole] = useState("Student")
+  const [userData,setUserData] = useState([])
+  const [invalidMsg,setInvalidMsg] = useState("Invalid Id")
+  const [display,setDisplay] = useState(false)
+
+
+
+const dataValidation = () =>{
+  try{
+
+  
+  const users = JSON.parse(localStorage.getItem("users"));
+
+
+const user = users.find((item) => item.id === userData);
+if(!user){
+  setDisplay(true)
+}
+
+if(user.role !== role){
+  setDisplay(true) 
+}
+
+
+else{
+navigate("/main-page",{state : user})
+
+}
+
+}
+catch(error){
+
+  console.log(error);
+  
+}
+}
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Add login API here
+   dataValidation();
+    
   }
 
   return (
@@ -25,7 +63,7 @@ const Login = () => {
         />
 
         <button className="text-lg sm:text-xl font-semibold text-white hover:underline underline-offset-8">
-          Home
+                <Link to="/">Home</Link>
         </button>
 
       </nav>
@@ -77,8 +115,18 @@ const Login = () => {
                   type="text"
                   placeholder={`Enter ${role} ID`}
                   required
+                  value={userData}
                   className="h-12 w-full rounded-xl border-2 border-amber-300 px-4 outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+                  onChange={(e)=>{setUserData(e.target.value)}}
                 />
+
+                {
+                  display && (
+                <h1 className='text-red-600'>{invalidMsg}</h1>
+
+                  )
+
+                }
               </div>
 
               <button

@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from "../assets/BannerImage.png"
 
 import Logo from "../assets/JoinEasy_School_Logo.png"
+import { Link } from 'react-router-dom'
 
 const IntroPage = () => {
   return (
@@ -13,8 +14,8 @@ const IntroPage = () => {
             <ul className='flex gap-10 text-2xl text-amber-50 font-semibold h-full p-5'>
                 <li className='cursor-pointer hover:underline hover:underline-offset-8'><a href="#about">About</a></li>
                 <li className='cursor-pointer hover:underline hover:underline-offset-8'><a href="#contact">Contact</a></li>
-                <li className='cursor-pointer hover:underline hover:underline-offset-8'>Student Login</li>
-                <li className='cursor-pointer hover:underline hover:underline-offset-8'>Teacher Login</li>
+                <li className='cursor-pointer hover:underline hover:underline-offset-8'><Link to="/login">Login</Link></li>
+       
             </ul>
         </div>
 
