@@ -22,28 +22,28 @@ const SideBar = () => {
             onClick={() => setClicked(false)}
             className='hover:text-black cursor-pointer text-center md:text-left'
           >
-            <span className='hidden md:inline'onClick={()=>{setClicked(false)}}>Dashboard</span>
+            <span className='hidden md:inline'onClick={()=>{setClicked("Dashboard")}}>Dashboard</span>
             <span className='md:hidden'>🏠</span>
           </li>
 
           <hr className='w-full border-amber-200' />
 
           <li className='hover:text-black cursor-pointer text-center md:text-left'>
-            <span className='hidden md:inline'>Assignments</span>
+            <span className='hidden md:inline' onClick={()=>{setClicked("Assignments")}}>Assignments</span>
             <span className='md:hidden'>📝</span>
           </li>
 
           <hr className='w-full border-amber-200' />
 
           <li className='hover:text-black cursor-pointer text-center md:text-left'>
-            <span className='hidden md:inline'>Notifications</span>
+            <span className='hidden md:inline' onClick={()=>{setClicked("Notification")}}>Notifications</span>
             <span className='md:hidden'>🔔</span>
           </li>
 
           <hr className='w-full border-amber-200' />
 
           <li
-            onClick={() => setClicked(true)}
+            onClick={() => setClicked("Time-Table")}
             className='hover:text-black cursor-pointer text-center md:text-left'
           >
             <span className='hidden md:inline'>Time Table</span>
